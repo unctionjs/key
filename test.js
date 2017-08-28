@@ -38,3 +38,32 @@ test(({same, end}) => {
 
   end()
 })
+
+test(({same, end}) => {
+  same(
+    key(0)("abc"),
+    "a"
+  )
+
+  end()
+})
+
+test(({same, end}) => {
+  same(
+    key("aaa")(new Map([["aaa", "aaa"]])),
+    "aaa"
+  )
+
+  end()
+})
+
+test(({same, end}) => {
+  const name = {}
+
+  same(
+    key(name)(new WeakMap([[name, "aaa"]])),
+    "aaa"
+  )
+
+  end()
+})
