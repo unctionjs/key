@@ -1,10 +1,10 @@
 /* eslint-disable no-undefined */
-import isIterable from "@unction/isiterable"
+import isIterable from "@unction/isfunctor"
 
 export default function key (name: KeyType): Function {
-  return function keyProperty (iterable: IterableType): ValueType {
-    if (isIterable(iterable)) {
-      return iterable[name]
+  return function keyProperty (functor: FunctorType): ValueType {
+    if (isIterable(functor)) {
+      return functor[name]
     }
 
     return undefined
