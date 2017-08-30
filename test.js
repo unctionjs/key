@@ -56,14 +56,3 @@ test(({same, end}) => {
 
   end()
 })
-
-test(({same, end}) => {
-  const name = {}
-
-  same(
-    key(name)(new WeakMap([[name, "aaa"]])),
-    "aaa"
-  )
-
-  end()
-})

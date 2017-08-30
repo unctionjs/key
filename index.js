@@ -1,23 +1,20 @@
 /* eslint-disable no-undefined */
 import type from "@unction/type"
 
-export default function key (name: any): Function {
-  return function keyProperty (functor: any): ValueType {
-    switch (type(functor)) {
+export default function key (name: KeyType): Function {
+  return function keyProperty (keyedFunctor: mixed): ValueType {
+    switch (type(keyedFunctor)) {
       case "String": {
-        return functor[name]
+        return keyedFunctor[name]
       }
       case "Object": {
-        return functor[name]
+        return keyedFunctor[name]
       }
       case "Array": {
-        return functor[name]
+        return keyedFunctor[name]
       }
       case "Map": {
-        return functor.get(name)
-      }
-      case "WeakMap": {
-        return functor.get(name)
+        return keyedFunctor.get(name)
       }
       default: {
         return undefined
