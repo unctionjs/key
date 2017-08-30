@@ -14,11 +14,7 @@ export default function key (name: KeyType): Function {
         return keyedFunctor[name]
       }
       case "Map": {
-        if (keyedFunctor.has(name)) {
-          return keyedFunctor.get(name)
-        }
-
-        return undefined
+        return keyedFunctor.get(name)
       }
       default: {
         return undefined
