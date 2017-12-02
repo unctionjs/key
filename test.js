@@ -3,7 +3,7 @@ import {test} from "tap"
 
 import key from "./index"
 
-test(({same, end}) => {
+test("Object found key", ({same, end}) => {
   same(
     key("aaa")({aaa: "1"}),
     "1"
@@ -12,7 +12,7 @@ test(({same, end}) => {
   end()
 })
 
-test(({same, end}) => {
+test("Object missing key", ({same, end}) => {
   same(
     key("bbb")({aaa: "1"}),
     undefined
@@ -21,7 +21,7 @@ test(({same, end}) => {
   end()
 })
 
-test(({same, end}) => {
+test("undefined missing key", ({same, end}) => {
   same(
     key("bbb")(undefined),
     undefined
@@ -30,7 +30,7 @@ test(({same, end}) => {
   end()
 })
 
-test(({same, end}) => {
+test("Array missing key", ({same, end}) => {
   same(
     key(0)(["aaa"]),
     "aaa"
@@ -39,7 +39,7 @@ test(({same, end}) => {
   end()
 })
 
-test(({same, end}) => {
+test("String found key", ({same, end}) => {
   same(
     key(0)("abc"),
     "a"
@@ -48,7 +48,7 @@ test(({same, end}) => {
   end()
 })
 
-test(({same, end}) => {
+test("Map found key", ({same, end}) => {
   same(
     key("aaa")(new Map([["aaa", "aaa"]])),
     "aaa"

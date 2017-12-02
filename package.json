@@ -57,7 +57,7 @@
     "tap": "10.3.4"
   },
   "dependencies": {
-    "@unction/type": "2.8.0"
+    "@unction/isnil": "2.15.0"
   },
   "files": [
     "transpiled/index.js"
